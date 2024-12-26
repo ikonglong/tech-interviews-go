@@ -49,8 +49,8 @@ func TestGroupAnagrams(t *testing.T) {
 		{
 			title: "1",
 			args:  []string{"eat", "tea", "tan", "ate", "nat", "bat"}, want: [][]string{
-			{"bat"}, {"nat", "tan"}, {"ate", "eat", "tea"},
-		}},
+				{"bat"}, {"nat", "tan"}, {"ate", "eat", "tea"},
+			}},
 		// {title: "2", args: []string{""}, want: [][]string{{""}}},
 		// {title: "3", args: []string{"a"}, want: [][]string{{"a"}}},
 	}
