@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+// 暴力计算
 func strStr(haystack string, needle string) int {
 	if len(haystack) < len(needle) {
 		return -1
@@ -17,7 +18,8 @@ func strStr(haystack string, needle string) int {
 		}
 		j := i + 1
 		k := 1
-		for ; j < i+len(needle) && k < len(needle); j++ {
+		// 第一次写时遗漏了 j < len(haystack)
+		for ; j < len(haystack) && j < i+len(needle) && k < len(needle); j++ {
 			if haystack[j] != needle[k] {
 				break
 			}
@@ -37,5 +39,5 @@ func strStr(haystack string, needle string) int {
 
 func TestStrStr(t *testing.T) {
 	assert.Equal(t, 0, strStr("sadbutsad", "sad"))
-	assert.Equal(t, 0, strStr("bbaa", "aab"))
+	assert.Equal(t, -1, strStr("bbaa", "aab"))
 }
